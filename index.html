@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIO Alumni - Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <div class="logo-container">
+          <img src="assets/Logo.png" alt="Logo MIO">
+          <span>MIO Alumni</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li data-auth-required hidden><a href="auth.html?mode=signup" data-auth-redirect="stages.html">Stages</a></li>
+        <li data-auth-required hidden><a href="auth.html?mode=signup" data-auth-redirect="emplois.html">Emplois</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+          <a href="auth.html?mode=login" class="btn btn-outline">Se connecter</a>
+        <a href="auth.html?mode=signup" class="btn btn-primary">S'inscrire</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Plateforme de Suivi des Professionnels et Alumni <span>MIO</span></h1>
+        <p>Connecter les étudiants et diplômés en Management Informatisé des Organisations. Partagez vos expériences de stages, opportunités de carrières et développez le réseau MIO.</p>
+        <p id="authNotice" class="auth-notice-banner" role="status" hidden>
+          Chers Alumni et Étudiants MIO, veuillez vous inscrire ou vous connecter pour accéder aux formulaires de partage d'expériences de stages et d'emplois de notre réseau.
+        </p>
+        <div style="display: flex; gap: 15px;">
+          <a href="auth.html?mode=signup" data-auth-redirect="stages.html" class="btn btn-primary">Explorer les Stages</a>
+          <a href="auth.html?mode=signup" data-auth-redirect="emplois.html" class="btn btn-secondary">Voir les Emplois</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>Dernières opportunités et retours d'expériences</h2>
+      <div class="grid" id="latest-posts">
+        <!-- Injection dynamique JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Management Informatisé des Organisations (MIO) - Tous droits réservés.</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
